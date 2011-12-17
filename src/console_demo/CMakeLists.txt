@@ -1,0 +1,6 @@
+IF(NOT ANDROID)
+	COLLECT_ALL_SOURCES(console_demo files)
+	include_directories (${CMAKE_SOURCE_DIR}/engine)
+	add_executable (console_demo ${files})
+	target_link_libraries (console_demo engine)
+ENDIF(NOT ANDROID)

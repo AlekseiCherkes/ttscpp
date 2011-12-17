@@ -1,0 +1,13 @@
+include_directories(${CMAKE_SOURCE_DIR}/third/utf8/source)
+include_directories(${CMAKE_SOURCE_DIR}/engine)
+include_directories(${CMAKE_SOURCE_DIR}/third/pcre)
+include_directories(${CMAKE_BINARY_DIR}/third/pcre)
+include_directories(${CMAKE_SOURCE_DIR}/third/gmock/include)
+include_directories(${CMAKE_SOURCE_DIR}/third/gmock/gtest/include)
+include_directories(${CMAKE_SOURCE_DIR}/third/zlib)
+include_directories(${CMAKE_SOURCE_DIR}/third/zlib/contrib/minizip)
+include_directories(${CMAKE_SOURCE_DIR}/test)
+
+COLLECT_ALL_SOURCES(test files)
+add_library (test SHARED ${files})
+target_link_libraries (test engine gmock zlib minizip)
